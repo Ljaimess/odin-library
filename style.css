@@ -24,11 +24,11 @@ header {
     border-style: solid;
     border-width: 1rem;
     border-color: seagreen;
-    width: 90vw;
+    width: 88vw;
     /* height: 80vh; */
     background-color: rgb(49, 25, 7);
     display: grid;
-    grid-template-columns:   repeat(auto-fit, minmax(12vw, 1fr));
+    grid-template-columns:   repeat(auto-fit, minmax(12vw, max-content));
     align-items: end;
     margin-top: 1rem; /* Add spacing below the header */
 }
@@ -36,7 +36,8 @@ header {
 
 .book {
     background-color: blue;
-    width: 100%;
+    margin:1px;
+    width: 12vw;
     height: 30vh;
     border-radius: 5px;
     border-width: 2px;

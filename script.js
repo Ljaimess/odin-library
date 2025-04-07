@@ -15,13 +15,13 @@ const myLibrary = [
 
 ];
 
-function Book(title, aurthor, pages, read) {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
   this.info = function () {
-    return `${title} by ${aurthor}, ${pages} pages, ${read ? "read" : "not read"}`;
+    return `${title} by ${author}, ${pages} pages, ${read ? "read" : "not read"}`;
   };
 
 }
@@ -37,11 +37,37 @@ submitBttn.addEventListener("click", (event) => {
   );
 
   myLibrary.push(newBook);
-  console.log(myLibrary);
-  console.log("clicked");
+
+  addBookToLibrary();
+
+  bookTitle.value = "";
+  authorName.value = "";
+  pageNum.value = "";
+  completedBttn.checked = false;
 });
 
 function addBookToLibrary() {
-  // take params, create a book then store it in the array
+  shelf.innerHTML = "";
+  myLibrary.forEach((book) => {
+    const bookDiv = document.createElement("div");
+    bookDiv.classList.add("book");
+    const titleDiv = document.createElement("h3");
+    titleDiv.textContent = `Title: ${book.title}`;
+    const authorDiv = document.createElement("p");
+    authorDiv.textContent = `Author: ${book.author}`;
+    const pagesDiv = document.createElement("p");
+    pagesDiv.textContent = `Pages: ${book.pages}`;
+    const readDiv = document.createElement("p");
+    readDiv.textContent = `Read: ${book.read ? "Yes" : "No"}`;
+
+    bookDiv.appendChild(titleDiv);
+    bookDiv.appendChild(authorDiv);
+    bookDiv.appendChild(pagesDiv);
+    bookDiv.appendChild(readDiv);
+
+    shelf.appendChild(bookDiv);
+  });
 };
+
+addBookToLibrary();
 
