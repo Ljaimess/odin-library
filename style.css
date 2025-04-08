@@ -2,45 +2,141 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
-    background-color: darkslategray;
+    background-color: rgb(68, 96, 86);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* min-height: 100vh; */
     justify-content: flex-start;
 }
 
 header {
-    background-color: brown;
+    background-color: seagreen;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.submitSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.openModal {
+    background-color: seagreen;
+    border: none;
+    padding: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 1rem;
+    border-radius: 4px;
+}
+
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 90%;
+}
+
+.bookModal {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 4px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 90%;
+    background-color: white;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button#closeModal {
+    background-color: #f44336;
+    color: white;
+}
+
+button.submitBttn {
+    background-color: #4caf50;
+    color: white;
 }
 
 .shelf {
-    background-color: saddlebrown;
+    background-color: rgb(49, 25, 7);
     border-style: solid;
     border-width: 1rem;
-    border-color: seagreen;
+    border-color: rgb(113, 61, 24);
     width: 88vw;
-    /* height: 80vh; */
-    background-color: rgb(49, 25, 7);
+    border-radius: 4px;
     display: grid;
-    grid-template-columns:   repeat(auto-fit, minmax(12vw, max-content));
+    grid-template-columns: repeat(auto-fit, minmax(12vw, max-content));
     align-items: end;
-    margin-top: 1rem; /* Add spacing below the header */
+    margin-top: 1rem;
 }
 
 
 .book {
-    background-color: blue;
-    margin:1px;
+    background-color: rgb(141, 32, 32);
+    margin: 1px;
     width: 12vw;
     height: 30vh;
     border-radius: 5px;
     border-width: 2px;
     border-style: solid;
-    border-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.titleDiv,
+.authorDiv,
+.pagesDiv,
+.readDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.removeBttn {
+    margin-top: auto;
+    background-color: #b3150a;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
 }

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Library</title>
-
 </head>
 <link rel="stylesheet" href="style.css" />
 
@@ -15,21 +14,26 @@
     </header>
     <container>
         <div class="submitSection">
-            <h2>Add a Book</h2>
-            <form id="bookForm">
-                <label for="title">Title:</label>
-                <input class="bookTitle" type="text" id="title" required>
-                <label for="author">Author:</label>
-                <input class="authorName" type="text" id="author" required>
-                <label for="pages">Pages:</label>
-                <input class="pageNum" type="number" id="pages" required>
-                <label for="completed">Completed:</label>
-                <input class="completedBttn" type="checkbox">
-                <button class="submitBttn" type="submit">Add Book</button>
-            </form>
+            <button class="openModal">Add a Book</button>
+            <dialog class="bookModal">
+                <form class="bookForm" method="dialog">
+                    <h3>Add a Book</h3>
+                    <label for="title">Title:</label>
+                    <input class="bookTitle" type="text" id="title" required>
+                    <label for="author">Author:</label>
+                    <input class="authorName" type="text" id="author" required>
+                    <label for="pages">Pages:</label>
+                    <input class="pageNum" type="number" id="pages" required>
+                    <label for="completed">Completed:</label>
+                    <input class="completedBttn" type="checkbox">
+                    <menu>
+                        <button class="submitBttn" type="submit">Add Book</button>
+                        <button class="closeModal" type="button">Cancel</button>
+                    </menu>
+                </form>
+            </dialog>
         </div>
         <main class="shelf">
-                
     </container>
     <script src="script.js"> </script>
 </body>
